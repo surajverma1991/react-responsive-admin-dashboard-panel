@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Card.css";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { motion, LayoutGroup, AnimateSharedLayout } from "framer-motion";
+import { motion, LayoutGroup } from "framer-motion";
 import { UilTimes } from "@iconscout/react-unicons";
 import Chart from "react-apexcharts";
 
@@ -12,7 +12,11 @@ const Card = (props) => {
   return (
     <LayoutGroup>
       {expanded ? (
-        <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
+        <ExpandedCard param={props} setExpanded={() => setExpanded(false)}    animate={{ opacity: 0.5 }}
+        transition={{
+          opacity: { ease: "linear" },
+          layout: { duration: 0.3 }
+        }}/>
       ) : (
         <CompactCard param={props} setExpanded={() => setExpanded(true)} />
       )}
@@ -31,8 +35,8 @@ function CompactCard({ param, setExpanded }) {
         background: param.color.backGround,
         boxShadow: param.color.boxShadow,
       }}
-      layoutId="expandableCard"
       layout
+   
       onClick={setExpanded}
     >
       <div className="radialBar">
@@ -111,7 +115,6 @@ function ExpandedCard({ param, setExpanded }) {
         background: param.color.backGround,
         boxShadow: param.color.boxShadow,
       }}
-      layoutId="expandableCard"
       layout
     >
       <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
