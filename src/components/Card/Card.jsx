@@ -12,11 +12,15 @@ const Card = (props) => {
   return (
     <LayoutGroup>
       {expanded ? (
-        <ExpandedCard param={props} setExpanded={() => setExpanded(false)}    animate={{ opacity: 0.5 }}
-        transition={{
-          opacity: { ease: "linear" },
-          layout: { duration: 0.3 }
-        }}/>
+        <ExpandedCard
+          param={props}
+          setExpanded={() => setExpanded(false)}
+          animate={{ opacity: 0.5 }}
+          transition={{
+            opacity: { ease: "linear" },
+            layout: { duration: 0.3 },
+          }}
+        />
       ) : (
         <CompactCard param={props} setExpanded={() => setExpanded(true)} />
       )}
@@ -36,7 +40,6 @@ function CompactCard({ param, setExpanded }) {
         boxShadow: param.color.boxShadow,
       }}
       layout
-   
       onClick={setExpanded}
     >
       <div className="radialBar">
