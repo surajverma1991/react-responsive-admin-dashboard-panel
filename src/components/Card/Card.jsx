@@ -10,17 +10,9 @@ const Card = (props) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <LayoutGroup>
+    <LayoutGroup id={props.id}>
       {expanded ? (
-        <ExpandedCard
-          param={props}
-          setExpanded={() => setExpanded(false)}
-          animate={{ opacity: 0.5 }}
-          transition={{
-            opacity: { ease: "linear" },
-            layout: { duration: 0.3 },
-          }}
-        />
+        <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
       ) : (
         <CompactCard param={props} setExpanded={() => setExpanded(true)} />
       )}
@@ -39,7 +31,7 @@ function CompactCard({ param, setExpanded }) {
         background: param.color.backGround,
         boxShadow: param.color.boxShadow,
       }}
-      layout
+      layoutId="expandable"
       onClick={setExpanded}
     >
       <div className="radialBar">
@@ -118,7 +110,7 @@ function ExpandedCard({ param, setExpanded }) {
         background: param.color.backGround,
         boxShadow: param.color.boxShadow,
       }}
-      layout
+      layoutId="expandable"
     >
       <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
         <UilTimes onClick={setExpanded} />
