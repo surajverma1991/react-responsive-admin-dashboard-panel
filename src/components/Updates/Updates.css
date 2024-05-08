@@ -1,13 +1,13 @@
 
 .Updates{
-    width: 85%;
-    background: white;
+    background: var(--white);
     border-radius: 0.7rem;
     padding: 1rem;
     gap: 1rem;
     display: flex;
     flex-direction: column;
     font-size: 13px;
+    margin-top: 36px;
 }
 
 .update{

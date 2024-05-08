@@ -18,6 +18,7 @@ const Cards = () => {
                                 value={card.value}
                                 png={card.png}
                                 series={card.series}
+                                id={id}
                             />
                         </div>
                     )
