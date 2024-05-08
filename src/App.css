@@ -1,19 +1,16 @@
 :root {
-  --yellow: linear-gradient(180deg, #F8D49A -146.42%, #FAD79D -46.42%);
-  --blue: rgb(125, 160, 250);
-  --black: #242d49;
-  --gray: #788097;
-  --purple: rgb(71, 71, 161);
-  --pink: rgb(243, 121, 126);
-  --glass: rgba(255, 255, 255, 0.54);
-  --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
-  --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
-  --activeItem: rgb(71, 71, 161);
   --white: #ffffff;
+  --primary: #4B49AC;
+  --primary-light: #98BDFF;
+  --secondary: #7DA0FA;
+  --secondary-light: #7978E9;
+  --pink: rgb(243, 121, 126);
+  --black: #242d49;
+  --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+  --activeItem: var(--primary);
 }
 
 .App {
-  background: rgb(245, 247, 255);
   font-family: "Inter", sans-serif;
 }
 
@@ -21,12 +18,16 @@
   display: grid;
   grid-template-columns: 15rem 1fr 20rem;
   gap: 16px;
+  background: #F5F7FF;
+  color: var(--black);
   height: 100vh;
 }
 
 @media screen and (max-width: 1200px) {
   .AppGlass{
     grid-template-columns: 10% 50% auto;
+    height: 100%;
+
   } 
 }
 

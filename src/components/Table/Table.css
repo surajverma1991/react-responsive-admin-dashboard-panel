@@ -2,6 +2,11 @@
     padding: 10px;
   }
   
+  .css-11xur9t-MuiPaper-root-MuiTableContainer-root{
+    
+    box-shadow: none !important;
+  }
+  
   .MuiTableRow-root.MuiTableRow-head > * {
     font-weight: bold !important;
   }
@@ -22,13 +27,6 @@
   .Details {
     color: #00b5ff !important;
   }
-  
-  @media screen and (max-width: 1200px) {
-    .Table {
-      /* width: 170%; */
-    }
-  }
-  
   
   @media screen and (max-width: 768px) {
     .Table{
